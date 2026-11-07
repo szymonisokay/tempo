@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/*
+ * Kolory aplikacji. Na razie tylko ciemny motyw — jasny dojdzie razem z
+ * ustawieniami. Kontrast tekstu sprawdzony względem tła (≥ 4.5:1).
+ */
+@theme {
+  --color-bg: #111317;
+  --color-surface: #1a1d23;
+  --color-surface-2: #22262e;
+  --color-raised: #2a2f38;
+  --color-line: #2c313a;
+  --color-line-strong: #3a404b;
+  --color-ink: #eceae6;
+  --color-ink-soft: #b4b9c1;
+  --color-muted: #9097a1;
+  --color-pending: #808792;
+  --color-accent: #f5b841;
+  --color-accent-hover: #ffd27a;
+  --color-error: #ff7a6b;
+  --color-error-soft: #c46a5f;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
